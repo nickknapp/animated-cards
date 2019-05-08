@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Open+Sans|Roboto');
+.wrap
+{
+  margin:0px auto;
+  width:100%;
+}
+.tile
+{
+  width:33.33%;
+  height:380px;
+  margin:0px;
+  background-color:#808080;
+  background-size:cover;
+  position:relative;
+  cursor:pointer;
+  transition: all 0.4s ease-out;
+  overflow:hidden;
+  color:white;
+  font-family: "Open Sans",Arial,sans-serif;
+	float: left;
+}
+.tile img
+{
+  -webkit-filter: brightness(30%); /* Safari 6.0 - 9.0 */
+  filter:brightness(30%);
+  height:100%;
+  width:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:0;
+  transition: all 0.4s ease-out;
+}
+.tile .text
+{
+  position:absolute;
+  padding:30px;
+  height:calc(100% - 0px);
+  width:100%;
+}
+.tile h1
+{
+  color: white;
+  font-weight:300;
+  font-size: 39px;
+  font-family:"Oswald",Arial,sans-serif;
+  line-height: 40px;
+  margin:0;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  transform: translateY(120px);
+  transition-delay: 0.5s;
+  transition: all 0.6s ease-in-out;
+}
+.tile h2
+{
+  color: #ccc;
+  font-weight:100;
+  line-height: 23px;
+  font-style:italic;
+  transform: translateX(200px);
+}
+.tile p
+{
+  font-weight:300;
+  margin:20px 0 0 0;
+  line-height: 18px;
+  transform: translateX(-200px);
+  transition-delay: 0.2s;
+  color: white;
+}
+.animate-text
+{
+  opacity:0;
+  transition: all 0.6s ease-in-out;
+}
+.text:hover {
+   background: transparent;
+}
+.tile:hover
+{
+  background: #333333; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #333333 0%, #666666 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #333333 0%,#666666 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #333333 0%,#666666 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  box-shadow: 0px 25px 71px -17px rgba(0,0,0,0.64);
+  border-right: 15px solid #fff;
+  z-index: 99;
+}
+.tile:hover:nth-child(1) {
+}
+.tile:hover:nth-child(2) {
+}
+.tile:hover:nth-child(3) {
+}
+.tile:hover img
+{
+  opacity: 0.2;
+}
+.tile:hover .animate-text
+{
+  transform:translateX(0);
+  opacity:1;
+}
+.tile:hover h1
+{
+  transform:translateY(0);
+  opacity:1;
+  transition: all 0.6s ease-in-out;
+}
+.dots
+{
+  position:absolute;
+  bottom:20px;
+  right:30px;
+  margin: 0 auto;
+  width:30px;
+  height:30px;
+  color:currentColor;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-around;
+  
+}
+
+.dots span
+{
+  width: 5px;
+  height:5px;
+  background-color: currentColor;
+  border-radius: 50%;
+  display:block;
+  opacity:0;
+  transition: transform 0.4s ease-out, opacity 0.5s ease;
+  transform: translateY(30px);
+ 
+}
+
+.tile:hover span
+{
+  opacity:1;
+  transform:translateY(0px);
+}
+
+.dots span:nth-child(1)
+{
+   transition-delay: 0.05s;
+}
+.dots span:nth-child(2)
+{
+   transition-delay: 0.1s;
+}
+.dots span:nth-child(3)
+{
+   transition-delay: 0.15s;
+}
+
+@media (max-width: 768px) {
+	.tile {
+  	width:50%;
+	}
+}
+	@media (max-width: 480px) {
+	.tile {
+  	width:100%;
+	}
+}
